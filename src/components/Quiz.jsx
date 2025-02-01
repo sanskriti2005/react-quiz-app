@@ -10,6 +10,7 @@ export const Quiz = () => {
   const [answers, setAnswers] = useState({});
   const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [allQuestionAttempted, setAllQuestionsAttempted] = useState(false);
 
 
   // affects to the states and functionalitites
