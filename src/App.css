@@ -75,3 +75,27 @@ nav{
   margin: 2rem;
   border-radius: 2px;
 }
+
+.quiz-card{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.quiz{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.quiz > input[type=submit]{
+  display:block;
+  background-color: rgb(101, 101, 213);
+  border: none;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 2px;
+}

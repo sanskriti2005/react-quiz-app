@@ -36,7 +36,7 @@ export const Quiz = () => {
     console.log(name, value);
   };
   return (
-    <form onSubmit={handleQuizSubmit}>
+    <form onSubmit={handleQuizSubmit} className="quiz">
       {questions.length &&
         questions.map((question) => {
           // console.log(question)

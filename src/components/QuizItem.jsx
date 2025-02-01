@@ -5,23 +5,13 @@ export const QuizItem = ({ question, handleQuizInput }) => {
   const [correctOrNot, setCorrectOrNot] = useState(false);
   const [allQ, setAllQ] = useState([]);
 
-  const handleShowAns = (id) => {
+  const handleShowAns = (e) => {
+    e.preventDefault()
     setShowAns(!showAns);
-    axios
-      .get("https://mulberry-quilled-thursday.glitch.me/api/questions")
-      .then((res) => setAllQ(res.data.questions))
-      .catch((err) => console.log(err.message));
-
-    const questionEle = allQ.find((ele) => ele.id === id);
-    if (questionEle.answer === question.answer) {
-      setCorrectOrNot(true);
-    } else {
-      setCorrectOrNot(false);
-    }
   };
   
   return (
-    <div key={question.id} id={question.id}>
+    <form key={question.id} id={question.id} className="quiz-card">
       <p>{question.question}</p>
       <div>
         <div>
@@ -60,10 +50,10 @@ export const QuizItem = ({ question, handleQuizInput }) => {
           />{" "}
           <label>{question.options[3]}</label>
         </div>
-        <button type="button" onClick={() => handleShowAns(question.id)}>
+        <button type="submit" onClick={(e) => handleShowAns(e)}>
           Show Answers
         </button>
       </div>
-    </div>
+    </form>
   );
 };

@@ -9,7 +9,7 @@ export const Result = () => {
     axios
       .get(`https://mulberry-quilled-thursday.glitch.me/api/result/${userId}`)
       .then((res) => setResponse(res.data))
-      .catch((err) => alert(err.message));
+      .catch((err) => console.log(err.message));
   }, []);
   return (
     <div className="result">
