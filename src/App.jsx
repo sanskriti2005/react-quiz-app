@@ -6,6 +6,7 @@ import { Home } from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import { Navbar } from "./components/Navbar";
+import { Quiz } from "./components/Quiz";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/quiz" element={<Quiz/>}/>
       </Routes>
     </>
   );
