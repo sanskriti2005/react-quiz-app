@@ -21,10 +21,13 @@ export const Login = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+      <h1>Login</h1>
+    <form onSubmit={handleSubmit} className='login-form'>
       <input type="text" placeholder='Enter username' name='username' onChange={handleInput}/>
       <input type="password" placeholder='Enter password' name='password' onChange={handleInput}/>
       <input type="submit" value='Login' />
     </form>
+    </div>
   )
 }
