@@ -3,7 +3,10 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextProvider";
 
 export const Navbar = () => {
+   // states for this component
   const { login, logoutFunc } = useContext(AuthContext);
+
+  // affects to the states and functionalitites
   return (
     <nav>
       <NavLink to="/" className="nav-link">

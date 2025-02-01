@@ -5,11 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { QuizItem } from "./QuizItem";
 
 export const Quiz = () => {
+  // states for this component
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
 
+
+  // affects to the states and functionalitites
   useEffect(() => {
     axios
       .get("https://mulberry-quilled-thursday.glitch.me/api/questions")
@@ -35,6 +38,8 @@ export const Quiz = () => {
     setAnswers({ ...answers, [name]: value });
     console.log(name, value);
   };
+
+  // Ui render
   return (
     <form onSubmit={handleQuizSubmit} className="quiz">
       {questions.length &&

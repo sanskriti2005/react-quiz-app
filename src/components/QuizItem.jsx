@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 
 export const QuizItem = ({ question, handleQuizInput }) => {
+  // states for this component
   const [showAns, setShowAns] = useState(false);
   const [correctOrNot, setCorrectOrNot] = useState(false);
   const [allQ, setAllQ] = useState([]);
 
+
+  // affects to the states and functionalitites
   const handleShowAns = (e) => {
     e.preventDefault()
     setShowAns(!showAns);
   };
   
+
+  // Ui render
   return (
     <form key={question.id} id={question.id} className="quiz-card">
       <p>{question.question}</p>
